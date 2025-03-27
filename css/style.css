@@ -1,1 +1,57 @@
 @charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+html, body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header-box {
+    width: 100dvw;
+    background-color: #1a1a1a;
+    height: 2rem;
+}
+
+.header-box__nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-box__logo {
+    font-size: 1.6rem;
+    position: relative;
+}
+
+.header-box__logo::after {
+    position: absolute;
+    content: "";
+    background-color: white;
+    width: 6px;
+    height: 6px;
+    right: -6px;
+    bottom: 3px;
+}
+
+.links__anchor--logo {
+    color: white;
+    text-decoration: none;
+    align-items: center;
+}
+
+.header-box__links {
+    display: flex;
+    gap: 2rem;
+}
+
+.links__anchor {
+    display: inline-block;
+    align-content: center;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+}
