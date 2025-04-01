@@ -94,3 +94,24 @@ body {
 }
 
 /* finish main */
+
+/* start footer */
+
+.footer-box {
+    background-color: #1a1a1a;
+    height: 2rem;
+}
+
+.footer-box__main-text{
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    align-content: center;
+}
+
+.footer-box--anchor{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* finish footer */
