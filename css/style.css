@@ -2,14 +2,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-html, body {
+html, body{
     font-family: "Inter", Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body {
+body{
     height: 100dvh;
     width: 100dvw;
     display: flex;
@@ -20,11 +20,11 @@ body {
 
 /* start header */
 
-.header-box {
+.header-box{
     background-color: #1a1a1a;
 }
 
-.header-box__nav {
+.header-box__nav{
     max-width: 90%;
     margin: auto;
     display: flex;
@@ -32,12 +32,12 @@ body {
     justify-content: space-between;
 }
 
-.header-box__logo {
+.header-box__logo{
     font-size: 1.6rem;
     position: relative;
 }
 
-.header-box__logo::after {
+.header-box__logo::after{
     position: absolute;
     content: "";
     background-color: white;
@@ -47,18 +47,18 @@ body {
     bottom: 3px;
 }
 
-.links__anchor--logo {
+.links__anchor--logo{
     color: white;
     text-decoration: none;
     align-items: center;
 }
 
-.header-box__links {
+.header-box__links{
     display: flex;
     gap: 2rem;
 }
 
-.links__anchor {
+.links__anchor{
     display: inline-block;
     align-content: center;
     height: 100%;
@@ -66,7 +66,7 @@ body {
     text-decoration: none;
 }
 
-.links__anchor::after {
+.links__anchor::after{
     content: "";
     display: block;
     width: 1rem;
@@ -78,13 +78,14 @@ body {
 
 /* start main */
 
-.main-box {
+.main-box{
     background-color: #212121;
     flex-grow: 1;
     align-content: center;
+    /* position: relative; */
 }
 
-.main-box__chart-area {
+.main-box__chart-area{
     min-height: 50dvh;
     display: flex;
     flex-direction: column;
@@ -92,20 +93,30 @@ body {
     gap: 1rem;
 }
 
-.chart-area--text {
+.chart-area--text{
     margin: 0;
     text-align: center;
 }
 
-.chart-area--chart {
+.chart-area--chart{
     color: black;
+}
+
+.chart-area__button{
+    background-color: #5aa3f7;
+    width: fit-content;
+    font-family: 'Inter';
+    margin: auto;
+    padding: 0.4rem;
+    border-radius: 5px;
+    text-transform: uppercase;
 }
 
 /* finish main */
 
 /* start footer */
 
-.footer-box {
+.footer-box{
     background-color: #1a1a1a;
     height: 2rem;
 }
