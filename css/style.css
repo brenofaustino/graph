@@ -107,7 +107,7 @@ body {
 
 .footer-box {
     background-color: #1a1a1a;
-    height: clamp(1rem, 2rem, 30rem);
+    height: 2rem;
 }
 
 .footer-box__main-text{
@@ -124,13 +124,4 @@ body {
     text-decoration: none;
 }
 
-/* .footer-box--anchor::after{
-    content: "";
-    display: inline-block;
-    position: relative;
-    top: 4px;
-    right: 42px;
-    width: 1rem;
-    border-bottom: 1px solid white;
-} */
 /* finish footer */
