@@ -59,11 +59,19 @@ body {
 }
 
 .links__anchor {
-    display: block;
+    display: inline-block;
     align-content: center;
     height: 100%;
     color: white;
     text-decoration: none;
+}
+
+.links__anchor::after {
+    content: "";
+    display: block;
+    width: 1rem;
+    border-bottom: 1px solid white;
+    margin-left: auto;
 }
 
 /* finish header */
@@ -99,7 +107,7 @@ body {
 
 .footer-box {
     background-color: #1a1a1a;
-    height: 2rem;
+    height: clamp(1rem, 2rem, 30rem);
 }
 
 .footer-box__main-text{
@@ -107,6 +115,7 @@ body {
     margin: 0;
     text-align: center;
     align-content: center;
+    text-shadow: 0 0 1px #1a1a1a;
 }
 
 .footer-box--anchor{
@@ -114,4 +123,14 @@ body {
     font-weight: bold;
     text-decoration: none;
 }
+
+/* .footer-box--anchor::after{
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    right: 42px;
+    width: 1rem;
+    border-bottom: 1px solid white;
+} */
 /* finish footer */
