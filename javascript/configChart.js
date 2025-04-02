@@ -42,7 +42,7 @@ let options = {
         enabled: false
     },
     title: {
-        text: 'Titulo Graph',
+        text: 'Titulo Graph', /*WILL BE EDITED*/
         align: 'center',
         margin: 10,
         offsetX: 0,
@@ -63,7 +63,7 @@ let options = {
     },
     series: [{
         name: 'Valor', 
-        data: [
+        data: [ /*WILL BE EDITED*/
             {x: 'nome1', y: 100, fillColor: '#439bff'}, 
             {x: 'nome2', y: 90, fillColor: '#43d9ff'},
             {x: 'nome3', y: 80, fillColor: '#439bff'}, 
@@ -78,10 +78,10 @@ let options = {
             {x: 'nome12', y: 4, fillColor: '#43d9ff'}
         ]
     }],
-    xaxis: {
-        categories: ['nomez1', 'nomez2', 'nomez3', 'nomez4', 'nomez5', 'nomez6', 'nomez7', 'nomez8', 'nomez9', 'nomez10', 'nomez11', 'nomez12'],
+    xaxis: { 
+        categories: /*WILL BE EDITED*/ ['nomez1', 'nomez2', 'nomez3', 'nomez4', 'nomez5', 'nomez6', 'nomez7', 'nomez8', 'nomez9', 'nomez10', 'nomez11', 'nomez12'],
         title: {
-            text: 'TESTE',
+            text: 'TESTE', /*WILL BE EDITED*/
             offsetX: 0,
             offsetY: 10,
             style: {
