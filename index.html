@@ -24,96 +24,169 @@
             <div id="chart" class="chart-area--chart"></div>
             <button type="button" class="chart-area__button" id="dialog-button">Editar gráfico</button>
         </article>
-        <dialog open class="main-box__popup" id="dialog">
-            <form action="#" method="dialog">
-                <legend>Configure os dados do seu gráfico!</legend>
+        <dialog close class="main-box__popup" id="dialog">
+            <form method="dialog" class="popup__form-box">
+                <legend class="form-box__legend">Configure os dados do seu gráfico!</legend>
 
-                <div class="data-form">
-                    <label for="name-bar-one" class="label-bar-name">Nome Barra 1</label>
-                    <input type="text" name="onebar-name" id="name-bar-one">
-                    <label for="bar-one" class="label-bar-value">Valor Barra 1</label>
-                    <input type="number" name="onebar" id="bar-one" class="input-bar-value">
+                <!-- GRAPH TITLE FIELD -->
+                <div class="form-box--title">
+                    <label for="chart-title">Titulo do Gráfico: </label>
+                    <input type="text" name="chart_title" id="chart-title" class="popup-field--input">
+                </div>
+                <div class="form-box--title">
+                    <label for="xtitle">Titulo eixo X:</label>
+                    <input type="text" name="Xtitle" id="xtitle" class="popup-field--input">
                 </div>
 
-                <div class="data-form">
-                    <label for="name-bar-two" class="label-bar-name">Nome Barra 2</label>
-                    <input type="text" name="twobar-name" id="name-bar-two" class="input-bar-name">
-                    <label for="bar-two" class="label-bar-value">Valor Barra 2</label>
-                    <input type="number" name="twobar" id="bar-two" class="input-bar-value">
+                <!-- GRAPH BAR ONE FIELD-->
+                <div class="form-box__bar">
+                    <div class="bar__popup-field">
+                        <label for="name-bar-one">Nome 1</label>
+                        <input type="text" name="onebar-name" id="name-bar-one" class="popup-field--input">
+                    </div>
+                    <div class="bar__popup-field">
+                        <label for="bar-one">Valor 1</label>
+                        <input type="number" name="onebar" id="bar-one" class="popup-field--input">
+                    </div>
                 </div>
 
-                <div class="data-form">
-                    <label for="name-bar-three" class="label-bar-name">Nome Barra 3</label>
-                    <input type="text" name="threebar-name" id="name-bar-three" class="input-bar-name">
-                    <label for="bar-three" class="label-bar-value">Valor Barra 3</label>
-                    <input type="number" name="threebar" id="bar-three" class="input-bar-value">
+                <!-- GRAPH BAR TWO FIELD-->
+                <div class="form-box__bar">
+                    <div class="bar__popup-field">
+                        <label for="name-bar-two">Nome 2</label>
+                        <input type="text" name="twobar-name" id="name-bar-two" class="popup-field--input">
+                    </div>
+                    <div class="bar__popup-field">
+                        <label for="bar-two">Valor 2</label>
+                        <input type="number" name="twobar" id="bar-two" class="popup-field--input">
+                    </div>
                 </div>
 
-                <div class="data-form">
-                    <label for="name-bar-four" class="label-bar-name">Nome Barra 4</label>
-                    <input type="text" name="fourbar-name" id="name-bar-four" class="input-bar-name">
-                    <label for="bar-four" class="label-bar-value">Valor Barra 4</label>
-                    <input type="number" name="fourbar" id="bar-four" class="input-bar-value">
+                <!-- GRAPH BAR THREE FIELD-->
+                <div class="form-box__bar">
+                    <div class="bar__popup-field">
+                        <label for="name-bar-three">Nome 3</label>
+                        <input type="text" name="threebar-name" id="name-bar-three" class="popup-field--input">
+                    </div>
+                    <div class="bar__popup-field">
+                        <label for="bar-three">Valor 3</label>
+                        <input type="number" name="threebar" id="bar-three" class="popup-field--input">
+                    </div>
                 </div>
 
-                <div class="data-form">
-                    <label for="name-bar-five" class="label-bar-name">Nome Barra 5</label>
-                    <input type="text" name="fivebar-name" id="name-bar-five" class="input-bar-name">
-                    <label for="bar-five" class="label-bar-value">Valor Barra 5</label>
-                    <input type="number" name="fivebar" id="bar-five" class="input-bar-value">
+                <!-- GRAPH BAR FOUR FIELD-->
+                <div class="form-box__bar">
+                    <div class="bar__popup-field">
+                        <label for="name-bar-four">Nome 4</label>
+                        <input type="text" name="fourbar-name" id="name-bar-four" class="popup-field--input">
+                    </div>
+                    <div class="bar__popup-field">
+                        <label for="bar-four">Valor 4</label>
+                        <input type="number" name="fourbar" id="bar-four" class="popup-field--input">
+                    </div>
                 </div>
 
-                <div class="data-form">
-                    <label for="name-bar-six" class="label-bar-name">Nome Barra 6</label>
-                    <input type="text" name="sixbar-name" id="name-bar-six" class="input-bar-name">
-                    <label for="bar-six" class="label-bar-value">Valor Barra 6</label>
-                    <input type="number" name="sixbar" id="bar-six" class="input-bar-value">
+                <!-- GRAPH BAR FIVE FIELD-->
+                <div class="form-box__bar">
+                    <div class="bar__popup-field">
+                        <label for="name-bar-five">Nome 5</label>
+                        <input type="text" name="fivebar-name" id="name-bar-five" class="popup-field--input">
+                    </div>
+                    <div class="bar__popup-field">
+                        <label for="bar-five">Valor 5</label>
+                        <input type="number" name="fivebar" id="bar-five" class="popup-field--input">
+                    </div>
                 </div>
 
-                <div class="data-form">
-                    <label for="name-bar-seven" class="label-bar-name">Nome Barra 7</label>
-                    <input type="text" name="sevenbar-name" id="name-bar-seven" class="input-bar-name">
-                    <label for="bar-seven" class="label-bar-value">Valor Barra 7</label>
-                    <input type="number" name="sevenbar" id="bar-seven" class="input-bar-value">
+                <!-- GRAPH BAR SIX FIELD-->
+                <div class="form-box__bar">
+                    <div class="bar__popup-field">
+                        <label for="name-bar-six">Nome 6</label>
+                        <input type="text" name="sixbar-name" id="name-bar-six" class="popup-field--input">
+                    </div>
+                    <div class="bar__popup-field">
+                        <label for="bar-six">Valor 6</label>
+                        <input type="number" name="sixbar" id="bar-six" class="popup-field--input">
+                    </div>
                 </div>
 
-                <div class="data-form">
-                    <label for="name-bar-eight" class="label-bar-name">Nome Barra 8</label>
-                    <input type="text" name="eightbar-name" id="name-bar-eight" class="input-bar-name">
-                    <label for="bar-eight" class="label-bar-value">Valor Barra 8</label>
-                    <input type="number" name="eightbar" id="bar-eight" class="input-bar-value">
+                <!-- GRAPH BAR SEVEN FIELD-->
+                <div class="form-box__bar">
+                    <div class="bar__popup-field">
+                        <label for="name-bar-seven">Nome 7</label>
+                        <input type="text" name="sevenbar-name" id="name-bar-seven" class="popup-field--input">
+                    </div>
+                    <div class="bar__popup-field">
+                        <label for="bar-seven">Valor 7</label>
+                        <input type="number" name="sevenbar" id="bar-seven" class="popup-field--input">
+                    </div>
                 </div>
 
-                <div class="data-form">
-                    <label for="name-bar-nine" class="label-bar-name">Nome Barra 9</label>
-                    <input type="text" name="ninebar-name" id="name-bar-nine" class="input-bar-name">
-                    <label for="bar-nine" class="label-bar-value">Valor Barra 9</label>
-                    <input type="number" name="ninebar" id="bar-nine" class="input-bar-value">
+                <!-- GRAPH BAR EIGHT FIELD-->
+                <div class="form-box__bar">
+                    <div class="bar__popup-field">
+                        <label for="name-bar-eight">Nome 8</label>
+                        <input type="text" name="eightbar-name" id="name-bar-eight" class="popup-field--input">
+                    </div>
+                    <div class="bar__popup-field">
+                        <label for="bar-eight">Valor 8</label>
+                        <input type="number" name="eightbar" id="bar-eight" class="popup-field--input">
+                    </div>
                 </div>
 
-                <div class="data-form">
-                    <label for="name-bar-ten" class="label-bar-name">Nome Barra 10</label>
-                    <input type="text" name="tenbar-name" id="name-bar-ten" class="input-bar-name">
-                    <label for="bar-ten" class="label-bar-value">Valor Barra 10</label>
-                    <input type="number" name="tenbar" id="bar-ten" class="input-bar-value">
+                <!-- GRAPH BAR NINE FIELD-->
+                <div class="form-box__bar">
+                    <div class="bar__popup-field">
+                        <label for="name-bar-nine">Nome 9</label>
+                        <input type="text" name="ninebar-name" id="name-bar-nine" class="popup-field--input">
+                    </div>
+                    <div class="bar__popup-field">
+                        <label for="bar-nine">Valor 9</label>
+                        <input type="number" name="ninebar" id="bar-nine" class="popup-field--input">
+                    </div>
                 </div>
 
-                <div class="data-form">
-                    <label for="name-bar-eleven" class="label-bar-name">Nome Barra 11</label>
-                    <input type="text" name="elevenbar-name" id="name-bar-eleven" class="input-bar-name">
-                    <label for="bar-eleven" class="label-bar-value">Valor Barra 11</label>
-                    <input type="number" name="elevenbar" id="bar-eleven" class="input-bar-value">
+                <!-- GRAPH BAR TEN FIELD-->
+                <div class="form-box__bar">
+                    <div class="bar__popup-field">
+                        <label for="name-bar-ten">Nome 10</label>
+                        <input type="text" name="tenbar-name" id="name-bar-ten" class="popup-field--input">
+                    </div>
+                    <div class="bar__popup-field">
+                        <label for="bar-ten">Valor 10</label>
+                        <input type="number" name="tenbar" id="bar-ten" class="popup-field--input">
+                    </div>
                 </div>
 
-                <div class="data-form">
-                    <label for="name-bar-twelve" class="label-bar-name">Nome Barra 12</label>
-                    <input type="text" name="twelvebar-name" id="name-bar-twelve" class="input-bar-name">
-                    <label for="bar-twelve" class="label-bar-value">Valor Barra 12</label>
-                    <input type="number" name="twelvebar" id="bar-twelve" class="input-bar-value">
+                <!-- GRAPH BAR ELEVEN FIELD-->
+                <div class="form-box__bar">
+                    <div class="bar__popup-field">
+                        <label for="name-bar-eleven">Nome 11</label>
+                        <input type="text" name="elevenbar-name" id="name-bar-eleven" class="popup-field--input">
+                    </div>
+                    <div class="bar__popup-field">
+                        <label for="bar-eleven">Valor 11</label>
+                        <input type="number" name="elevenbar" id="bar-eleven" class="popup-field--input">
+                    </div>
                 </div>
 
-                <button type="submit">Pronto!</button>
-                <button id="cancel" type="reset">Cancel</button>
+                <!-- GRAPH BAR TWELVE FIELD-->
+                <div class="form-box__bar">
+                    <div class="bar__popup-field">
+                        <label for="name-bar-twelve">Nome 12</label>
+                        <input type="text" name="twelvebar-name" id="name-bar-twelve" class="popup-field--input">
+                    </div>
+                    <div class="bar__popup-field">
+                        <label for="bar-twelve">Valor 12</label>
+                        <input type="number" name="twelvebar" id="bar-twelve" class="popup-field--input">
+                    </div>
+                </div>
+
+                <!-- GRAPH BUTTONS -->
+                <div class="form-box__buttons">
+                    <button type="submit" class="buttons--confirm">Pronto!</button>
+                    <button id="cancel" type="reset" class="buttons--cancel">Cancelar</button>
+                </div>
             </form>
         </dialog>
     </main>

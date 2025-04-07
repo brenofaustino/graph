@@ -114,6 +114,68 @@ body{
 
 /* finish main */
 
+/*start popup*/
+
+.main-box__popup{
+    background-color: #1a1a1a;
+    border: 1px solid #2a5383;
+    color: #dddddd;
+}
+
+.main-box__popup::backdrop{
+    background-color: rgba(15, 15, 15, 0.89);
+}
+
+.popup__form-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-box__bar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-box--title{
+    width: 100%;
+}
+
+.bar__popup-field{
+    width: 48%;
+}
+
+.popup-field--input{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #dddddd;
+    border: none;
+}
+
+.form-box__buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons--confirm{
+    background-color: #28d422;
+    font-family: 'Inter';
+    padding: 0.4rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.buttons--cancel{
+    background-color: #d42222;
+    color: white;
+    font-family: 'Inter';
+    padding: 0.4rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+/*finish popup*/
+
 /* start footer */
 
 .footer-box{
