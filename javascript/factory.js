@@ -1,11 +1,13 @@
-export function dataFiltering(dataReceived){
+function dataFiltering(){
+    let inputData = Array.from(document.querySelectorAll(".popup-field--input"))
+
     let data = {
         title: [],
         barName: [],
         barValue:[]
     }
 
-    dataReceived.map(function(element, index){
+    inputData.map(function(element, index){
 
         if(index<2){
             data.title.push(element.value)
@@ -19,10 +21,27 @@ export function dataFiltering(dataReceived){
 
     })
 
-    return chartGenerator(data)
+    localStorage.setItem("data", JSON.stringify(data))
+
+    return data
 }
 
-function chartGenerator(obj){
+export function getSavedData(){
+    let dataSaved = localStorage.getItem("data")
+    dataSaved = JSON.parse(dataSaved)
+    console.log(dataSaved)
+    let allData = []
+
+    allData.push(...dataSaved.title)
+    for(let i = 0; i < 12; i++){
+        allData.push(dataSaved.barName[i])
+        allData.push(dataSaved.barValue[i])
+    }
+
+}
+
+export function chartGenerator(){
+    let obj = dataFiltering()
     let options = {
         chart: {
             sparkline: {
@@ -138,4 +157,3 @@ function chartGenerator(obj){
     }
     return options
 }
-
