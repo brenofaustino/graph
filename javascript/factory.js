@@ -26,22 +26,40 @@ function dataFiltering(){
     return data
 }
 
-export function getSavedData(){
+function getSavedData(){
     let dataSaved = localStorage.getItem("data")
     dataSaved = JSON.parse(dataSaved)
-    console.log(dataSaved)
-    let allData = []
+    
+    return dataSaved
+}
 
-    allData.push(...dataSaved.title)
-    for(let i = 0; i < 12; i++){
-        allData.push(dataSaved.barName[i])
-        allData.push(dataSaved.barValue[i])
+export function setInputValue(){
+    let data = getSavedData()
+    if(data){
+
+        let allData = []
+        
+        allData.push(...data.title)
+        for(let i = 0; i < 12; i++){
+            allData.push(data.barName[i])
+            allData.push(data.barValue[i])
+        }
+        
+        let fields = document.querySelectorAll(".popup-field--input")
+        
+        for (let i = 0; i < fields.length; i++){
+            fields[i].value = allData[i]
+        }
     }
-
 }
 
 export function chartGenerator(){
-    let obj = dataFiltering()
+    let obj
+    if(getSavedData()){
+        obj = getSavedData()
+    } else {
+        obj = dataFiltering()
+    }
     let options = {
         chart: {
             sparkline: {
