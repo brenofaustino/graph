@@ -4,6 +4,7 @@ const dialog = document.querySelector("#dialog-button")
 const confirmButton = document.getElementById("confirm");
 const cancelButton = document.getElementById("cancel");
 const dialogbox = document.querySelector("#dialog")
+const chartBox = document.querySelector('#chart')
 
 dialog.addEventListener("click", function(){
     setInputValue()
@@ -15,13 +16,14 @@ cancelButton.addEventListener("click", function(){
 })
 
 confirmButton.addEventListener("click", function(){
-    document.querySelector('#chart').innerHTML = ""
-    let chart = new ApexCharts(document.querySelector('#chart'), chartGenerator());
+    chartBox.innerHTML = ""
+    let chart = new ApexCharts(chartBox, chartGenerator());
     chart.render();
 })
 
 window.addEventListener("load", function(){
-    document.querySelector('#chart').innerHTML = ""
-    let chart = new ApexCharts(document.querySelector('#chart'), chartGenerator());
+    chartBox.innerHTML = ""
+    setInputValue()
+    let chart = new ApexCharts(chartBox, chartGenerator());
     chart.render();
 })
