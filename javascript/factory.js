@@ -54,12 +54,7 @@ export function setInputValue(){
 }
 
 export function chartGenerator(){
-    let obj
-    if(getSavedData()){
-        obj = getSavedData()
-    } else {
-        obj = dataFiltering()
-    }
+    let obj = dataFiltering()
     let options = {
         chart: {
             sparkline: {
