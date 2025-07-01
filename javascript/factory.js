@@ -1,3 +1,4 @@
+//DATA SECTION
 function dataFiltering(){
     let inputData = Array.from(document.querySelectorAll(".popup-field--input"))
 
@@ -33,28 +34,122 @@ function getSavedData(){
     return dataSaved
 }
 
-export function setInputValue(){
+function clearInputField(){
+    const containerButtons = document.querySelector("#form-bar-buttons")
+    let barFields = Array.from(document.querySelectorAll(".form-box__bar"))
+    for(let i = barFields.length; i > 1; i--){
+        let lastBarBox = containerButtons.previousElementSibling
+        lastBarBox.parentElement.removeChild(lastBarBox)
+    }
+
+    let fields = document.querySelectorAll(".popup-field--input")
+    for (let i = 0; i < fields.length; i++){
+        fields[i].value = ""
+    }
+}
+
+export function loadInputValue(){
     let data = getSavedData()
     if(data){
-
+        clearInputField()
         let allData = []
         
         allData.push(...data.title)
-        for(let i = 0; i < 12; i++){
+        for(let i = 0; i < data.barName.length; i++){
+            if(i > 0){
+                addBarField()
+            } //O ERRO ESTÁ AQUI, COM 2 VALORES ELE ADD +1
+            //talvez porque o numero de linhas nunca seja deletado
+
             allData.push(data.barName[i])
             allData.push(data.barValue[i])
         }
         
         let fields = document.querySelectorAll(".popup-field--input")
-        
         for (let i = 0; i < fields.length; i++){
             fields[i].value = allData[i]
         }
     }
 }
 
+function barChartData(){
+    let obj = dataFiltering()
+    let barData = []
+    for(let i = 0; i < obj.barName.length; i++){
+        if(i % 2 == 0){
+            barData.push({
+                x: obj.barName[i],
+                y: obj.barValue[i],
+                fillColor: '#439bff'
+            })
+        }
+        if(i % 2 != 0){
+            barData.push({
+                x: obj.barName[i],
+                y: obj.barValue[i],
+                fillColor: '#43d9ff'
+            })
+        }
+    }
+    return barData
+}
+
+//DOM SECTION
+export function addBarField(){
+    const containerButtons = document.querySelector("#form-bar-buttons")
+    let barFields = Array.from(document.querySelectorAll(".form-box__bar"))
+    
+    if(barFields.length == 12){
+        return console.log("maximo de 12")
+    }
+    
+    let lastBarBox = containerButtons.previousElementSibling
+    lastBarBox = lastBarBox.cloneNode(true)
+    
+    //settings to name fields
+    let fieldName = lastBarBox.firstElementChild.firstElementChild
+    fieldName.setAttribute("for", `name-bar${barFields.length + 1}`)
+    fieldName.textContent = `Nome ${barFields.length + 1}`
+    fieldName = lastBarBox.firstElementChild.lastElementChild
+    fieldName.setAttribute("id", `name-bar${barFields.length + 1}`)
+    fieldName.setAttribute("name", `bar-name${barFields.length + 1}`)
+    fieldName.value = ""
+    
+    //settings to value fields
+    let fieldValue = lastBarBox.lastElementChild.firstElementChild
+    fieldValue.setAttribute("for", `bar${barFields.length + 1}`)
+    fieldValue.textContent = `Valor ${barFields.length + 1}`
+    fieldValue = lastBarBox.lastElementChild.lastElementChild
+    fieldValue.setAttribute("id", `bar${barFields.length + 1}`)
+    fieldValue.setAttribute("name", `value-bar${barFields.length + 1}`)
+    fieldValue.value = ""
+    
+    let formContainer = containerButtons.parentNode
+    formContainer.insertBefore(lastBarBox, containerButtons)
+}
+
+export function excludeBarField(){
+    const containerButtons = document.querySelector("#form-bar-buttons")
+    let barFields = Array.from(document.querySelectorAll(".form-box__bar"))
+
+    if(barFields.length == 1){
+        return console.log("Valor minimo atingido")
+    }
+
+    let lastBarBox = containerButtons.previousElementSibling
+    lastBarBox.parentElement.removeChild(lastBarBox)
+}
+
+//CHART GENERATION SECTION
 export function chartGenerator(){
     let obj = dataFiltering()
+    let barData = barChartData()
+
+    let categorieArr = [];
+    for(let prop of barData){
+        categorieArr.push(prop.x)
+    }
+
     let options = {
         chart: {
             sparkline: {
@@ -120,23 +215,10 @@ export function chartGenerator(){
         },
         series: [{
             name: 'Valor', 
-            data: [ /*WILL BE EDITED*/
-                {x: obj.barName[0], y: obj.barValue[0], fillColor: '#439bff'}, 
-                {x: obj.barName[1], y: obj.barValue[1], fillColor: '#43d9ff'},
-                {x: obj.barName[2], y: obj.barValue[2], fillColor: '#439bff'}, 
-                {x: obj.barName[3], y: obj.barValue[3], fillColor: '#43d9ff'},
-                {x: obj.barName[4], y: obj.barValue[4], fillColor: '#439bff'}, 
-                {x: obj.barName[5], y: obj.barValue[5], fillColor: '#43d9ff'},
-                {x: obj.barName[6], y: obj.barValue[6], fillColor: '#439bff'}, 
-                {x: obj.barName[7], y: obj.barValue[7], fillColor: '#43d9ff'},
-                {x: obj.barName[8], y: obj.barValue[8], fillColor: '#439bff'}, 
-                {x: obj.barName[9], y: obj.barValue[9], fillColor: '#43d9ff'},
-                {x: obj.barName[10], y: obj.barValue[10], fillColor: '#439bff'}, 
-                {x: obj.barName[11], y: obj.barValue[11], fillColor: '#43d9ff'}
-            ]
+            data: barData
         }],
         xaxis: { 
-            categories: /*WILL BE EDITED*/ [obj.barName[0], obj.barName[1], obj.barName[2], obj.barName[3], obj.barName[4], obj.barName[5], obj.barName[6], obj.barName[7], obj.barName[8], obj.barName[9], obj.barName[10], obj.barName[11]],
+            categories: categorieArr,
             title: {
                 text: obj.title[1], /*WILL BE EDITED*/
                 offsetX: 0,
