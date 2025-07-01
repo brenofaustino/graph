@@ -1,13 +1,15 @@
-import { chartGenerator, setInputValue } from "./factory.js";
+import { chartGenerator, loadInputValue, addBarField, excludeBarField} from "./factory.js";
 
 const dialog = document.querySelector("#dialog-button")
-const confirmButton = document.getElementById("confirm");
-const cancelButton = document.getElementById("cancel");
+const addButton = document.getElementById("add")
+const delButton = document.getElementById("del")
+const confirmButton = document.getElementById("confirm")
+const cancelButton = document.getElementById("cancel")
 const dialogbox = document.querySelector("#dialog")
 const chartBox = document.querySelector('#chart')
 
 dialog.addEventListener("click", function(){
-    setInputValue()
+    loadInputValue()
     dialogbox.showModal()
 })
 
@@ -21,9 +23,17 @@ confirmButton.addEventListener("click", function(){
     chart.render();
 })
 
+addButton.addEventListener("click", function() {
+    addBarField()
+})
+
+delButton.addEventListener("click", function(){
+    excludeBarField()
+})
+
 window.addEventListener("load", function(){
     chartBox.innerHTML = ""
-    setInputValue()
+    loadInputValue()
     let chart = new ApexCharts(chartBox, chartGenerator());
     chart.render();
 })

@@ -165,6 +165,25 @@ body{
     text-transform: uppercase;
 }
 
+.buttons--add{
+    background-color: #28d422;
+    font-family: 'Inter';
+    padding: 0.4rem;
+    border-radius: 50% 0 0 50%;
+    text-transform: uppercase;
+    width: 30px;
+}
+
+.buttons--del{
+    background-color: #d42222;
+    color: white;
+    font-family: 'Inter';
+    padding: 0.4rem;
+    border-radius: 0 50% 50% 0;
+    text-transform: uppercase;
+    width: 30px;
+}
+
 .buttons--cancel{
     background-color: #d42222;
     color: white;
