@@ -20,45 +20,51 @@
     </header>
     <main class="main-box">
         <article class="main-box__chart-area">
-            <p class="chart-area--text">testando função de texto explicativo para suporte ao entendimento do grafico</p>
+            <p class="chart-area--text" id="chart-area__opening-text">Esse texto pode ser alterado ao editar o gráfico</p>
             <div id="chart" class="chart-area--chart"></div>
             <button type="button" class="chart-area__button" id="dialog-button">Editar gráfico</button>
         </article>
         <dialog close class="main-box__popup" id="dialog">
             <form method="dialog" class="popup__form-box">
-                <legend class="form-box__legend">Configure os dados do seu gráfico!</legend>
-
-                <!-- GRAPH TITLE FIELD -->
-                <div class="form-box--title">
-                    <label for="chart-title">Titulo do Gráfico: </label>
-                    <input type="text" name="chart_title" id="chart-title" class="popup-field--input">
-                </div>
-                <div class="form-box--title">
-                    <label for="xtitle">Titulo eixo X:</label>
-                    <input type="text" name="Xtitle" id="xtitle" class="popup-field--input">
-                </div>
-
-                <!-- GRAPH BAR ONE FIELD-->
-                <div class="form-box__bar">
-                    <div class="bar__popup-field">
-                        <label for="name-bar-one">Nome 1</label>
-                        <input type="text" name="onebar-name" id="name-bar-one" class="popup-field--input">
+                <fieldset class="form-box__fieldset">
+                    <legend>Texto de apoio</legend>
+                    <div class="form-box__text-box">
+                        <textarea name="msg" rows="6" cols="50" maxlength="300" style="resize: none;" class="form-box__text-field" placeholder="Escreva seu texto aqui..."></textarea>
                     </div>
-                    <div class="bar__popup-field">
-                        <label for="bar-one">Valor 1</label>
-                        <input type="number" name="onebar" id="bar-one" class="popup-field--input">
+                </fieldset>
+                
+                <fieldset class="form-box__fieldset">
+                    <legend class="form-box__legend">Configurar gráfico</legend>
+                    <!-- GRAPH TITLE FIELD -->
+                    <div class="form-box--title">
+                        <label for="chart-title">Titulo do Gráfico: </label>
+                        <input type="text" name="chart_title" id="chart-title" class="popup-field--input">
                     </div>
-                </div>
-
-                <!-- GRAPH BUTTONS -->
-                <div class="form-box__buttons" id="form-bar-buttons">
-                    <button id="confirm" type="submit" class="buttons--confirm">Pronto!</button>
-                    <div>
-                        <button id="add" type="button" class="buttons--add">+</button>
-                        <button id="del" type="button" class="buttons--del">-</button>
+                    <div class="form-box--title">
+                        <label for="xtitle">Titulo eixo X:</label>
+                        <input type="text" name="Xtitle" id="xtitle" class="popup-field--input">
                     </div>
-                    <button id="cancel" class="buttons--cancel">Cancelar</button>
-                </div>
+                    <!-- GRAPH BAR ONE FIELD-->
+                    <div class="form-box__bar">
+                        <div class="bar__popup-field">
+                            <label for="name-bar-one">Nome 1</label>
+                            <input type="text" name="onebar-name" id="name-bar-one" class="popup-field--input">
+                        </div>
+                        <div class="bar__popup-field">
+                            <label for="bar-one">Valor 1</label>
+                            <input type="number" name="onebar" id="bar-one" class="popup-field--input">
+                        </div>
+                    </div>
+                    <!-- GRAPH BUTTONS -->
+                    <div class="form-box__buttons" id="form-bar-buttons">
+                        <button id="confirm" type="submit" class="buttons--confirm">Pronto!</button>
+                        <div>
+                            <button id="add" type="button" class="buttons--add">+</button>
+                            <button id="del" type="button" class="buttons--del">-</button>
+                        </div>
+                        <button id="cancel" class="buttons--cancel">Cancelar</button>
+                    </div>
+                </fieldset>
             </form>
         </dialog>
     </main>

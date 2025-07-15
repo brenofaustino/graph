@@ -1,11 +1,13 @@
 //DATA SECTION
 function dataFiltering(){
     let inputData = Array.from(document.querySelectorAll(".popup-field--input"))
+    let textField = textFieldFiltering()
 
     let data = {
         title: [],
         barName: [],
-        barValue:[]
+        barValue:[],
+        text:[]
     }
 
     inputData.map(function(element, index){
@@ -19,12 +21,25 @@ function dataFiltering(){
         if(index >= 2 && index % 2 != 0){
             data.barValue.push(element.value)
         }
-
     })
 
+    data.text.push(textField.text[0].value)
+    
     localStorage.setItem("data", JSON.stringify(data))
-
+    
     return data
+}
+
+function textFieldFiltering(){
+    let textFieldInput = document.querySelector(".form-box__text-field")
+
+    let textInput = {
+        text: []
+    }
+    
+    textInput.text.push(textFieldInput)
+    
+    return textInput
 }
 
 function getSavedData(){
@@ -46,6 +61,9 @@ function clearInputField(){
     for (let i = 0; i < fields.length; i++){
         fields[i].value = ""
     }
+
+    let textField = document.querySelector(".form-box__text-field")
+    textField.value = ""
 }
 
 export function loadInputValue(){
@@ -53,22 +71,27 @@ export function loadInputValue(){
     if(data){
         clearInputField()
         let allData = []
+        let allText = []
         
         allData.push(...data.title)
         for(let i = 0; i < data.barName.length; i++){
             if(i > 0){
                 addBarField()
-            } //O ERRO ESTÁ AQUI, COM 2 VALORES ELE ADD +1
-            //talvez porque o numero de linhas nunca seja deletado
+            }
 
             allData.push(data.barName[i])
             allData.push(data.barValue[i])
         }
-        
+
+        allText.push(data.text[0])
+
         let fields = document.querySelectorAll(".popup-field--input")
         for (let i = 0; i < fields.length; i++){
             fields[i].value = allData[i]
         }
+
+        let textFields = document.querySelector(".form-box__text-field")
+        textFields.value = allText[0]
     }
 }
 
@@ -140,6 +163,18 @@ export function excludeBarField(){
     lastBarBox.parentElement.removeChild(lastBarBox)
 }
 
+export function setText(){
+    let text = document.querySelector(".form-box__text-field")
+    let paragraph = document.querySelector("#chart-area__opening-text")
+
+    if(text.value == ""){
+        paragraph.innerHTML = "Esse texto pode ser alterado ao editar o gráfico."
+    }
+    if(text.value){
+        paragraph.innerHTML = text.value
+    }
+}
+
 //CHART GENERATION SECTION
 export function chartGenerator(){
     let obj = dataFiltering()
@@ -194,7 +229,7 @@ export function chartGenerator(){
             enabled: false
         },
         title: {
-            text: obj.title[0], /*WILL BE EDITED*/
+            text: obj.title[0], 
             align: 'center',
             margin: 10,
             offsetX: 0,
@@ -220,7 +255,7 @@ export function chartGenerator(){
         xaxis: { 
             categories: categorieArr,
             title: {
-                text: obj.title[1], /*WILL BE EDITED*/
+                text: obj.title[1],
                 offsetX: 0,
                 offsetY: 10,
                 style: {

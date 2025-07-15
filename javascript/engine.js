@@ -1,4 +1,4 @@
-import { chartGenerator, loadInputValue, addBarField, excludeBarField} from "./factory.js";
+import { chartGenerator, loadInputValue, addBarField, excludeBarField, setText} from "./factory.js";
 
 const dialog = document.querySelector("#dialog-button")
 const addButton = document.getElementById("add")
@@ -21,6 +21,7 @@ confirmButton.addEventListener("click", function(){
     chartBox.innerHTML = ""
     let chart = new ApexCharts(chartBox, chartGenerator());
     chart.render();
+    setText()
 })
 
 addButton.addEventListener("click", function() {
@@ -36,4 +37,5 @@ window.addEventListener("load", function(){
     loadInputValue()
     let chart = new ApexCharts(chartBox, chartGenerator());
     chart.render();
+    setText()
 })
