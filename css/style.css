@@ -173,6 +173,13 @@ body{
     border: none;
 }
 
+.popup-field--title-input{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #dddddd;
+    border: none;
+}
+
 .form-box__buttons{
     display: flex;
     justify-content: space-around;

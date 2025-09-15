@@ -25,7 +25,7 @@
             <button type="button" class="chart-area__button" id="dialog-button">Editar gráfico</button>
         </article>
         <dialog close class="main-box__popup" id="dialog">
-            <form method="dialog" class="popup__form-box">
+            <form method="dialog" class="popup__form-box" id="popup__main-form">
                 <fieldset class="form-box__fieldset">
                     <legend>Texto de apoio</legend>
                     <div class="form-box__text-box">
@@ -38,21 +38,21 @@
                     <!-- GRAPH TITLE FIELD -->
                     <div class="form-box--title">
                         <label for="chart-title">Titulo do Gráfico: </label>
-                        <input type="text" name="chart_title" id="chart-title" class="popup-field--input">
+                        <input type="text" name="chart_title" id="chart-title" class="popup-field--title-input">
                     </div>
                     <div class="form-box--title">
                         <label for="xtitle">Titulo eixo X:</label>
-                        <input type="text" name="Xtitle" id="xtitle" class="popup-field--input">
+                        <input type="text" name="Xtitle" id="xtitle" class="popup-field--title-input">
                     </div>
                     <!-- GRAPH BAR ONE FIELD-->
                     <div class="form-box__bar">
                         <div class="bar__popup-field">
-                            <label for="name-bar-one">Nome 1</label>
-                            <input type="text" name="onebar-name" id="name-bar-one" class="popup-field--input">
+                            <label for="name-bar1">Nome 1</label>
+                            <input type="text" name="bar-name1" id="name-bar1" class="popup-field--input-bar popup-field--input">
                         </div>
                         <div class="bar__popup-field">
-                            <label for="bar-one">Valor 1</label>
-                            <input type="number" name="onebar" id="bar-one" class="popup-field--input">
+                            <label for="bar1">Valor 1</label>
+                            <input type="number" name="value-bar1" id="bar1" class="popup-field--input-valuebar popup-field--input">
                         </div>
                     </div>
                     <!-- GRAPH BUTTONS -->
@@ -62,7 +62,7 @@
                             <button id="add" type="button" class="buttons--add">+</button>
                             <button id="del" type="button" class="buttons--del">-</button>
                         </div>
-                        <button id="cancel" class="buttons--cancel">Cancelar</button>
+                        <button id="cancel" class="buttons--cancel" type="reset">Cancelar</button>
                     </div>
                 </fieldset>
             </form>
@@ -73,6 +73,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="javascript/engine.js" type="module"></script>
+    <!-- <script src="javascript/engine.js" type="module"></script> -->
+    <script type="module" src="javascript/index.js"></script>
 </body>
 </html>
