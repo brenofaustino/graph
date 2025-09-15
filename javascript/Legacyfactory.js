@@ -1,5 +1,5 @@
 //DATA SECTION
-function dataFiltering(){
+function dataFiltering(){  //---------- filterData
     let inputData = Array.from(document.querySelectorAll(".popup-field--input"))
     let textField = textFieldFiltering()
 
@@ -25,12 +25,12 @@ function dataFiltering(){
 
     data.text.push(textField.text[0].value)
     
-    localStorage.setItem("data", JSON.stringify(data))
+    localStorage.setItem("data", JSON.stringify(data)) //DONE
     
     return data
 }
 
-function textFieldFiltering(){
+function textFieldFiltering(){ //--------- filterData
     let textFieldInput = document.querySelector(".form-box__text-field")
 
     let textInput = {
@@ -42,7 +42,7 @@ function textFieldFiltering(){
     return textInput
 }
 
-function getSavedData(){
+function getSavedData(){ //---------- DONE
     let dataSaved = localStorage.getItem("data")
     dataSaved = JSON.parse(dataSaved)
     
@@ -175,7 +175,7 @@ export function setText(){
     }
 }
 
-//CHART GENERATION SECTION
+//CHART GENERATION SECTION -----------DONE
 export function chartGenerator(){
     let obj = dataFiltering()
     let barData = barChartData()
