@@ -9,67 +9,75 @@
 <body>
     <header class="header-box">
         <nav class="header-box__nav">
-            <div class="header-box__logo">
-                <a href="" class="links__anchor--logo">Graph</a>
+            <div class="header-box__logo-div">
+                <a href="" class="header-box__logo-anchor">
+                    <img src="images/logo.png" alt="logotipo">
+                </a>
             </div>
-            <div class="header-box__links">
-                <a href="#" class="links__anchor">Página inicial</a>
-                <a href="#" class="links__anchor">Sobre</a>
+            <div class="header-box__links-div">
+                <a href="#" class="header-box__links-a">Página inicial</a>
+                <a href="#" class="header-box__links-a">Sobre</a>
             </div>
         </nav>
     </header>
     <main class="main-box">
         <article class="main-box__chart-area">
-            <p class="chart-area--text" id="chart-area__opening-text">Esse texto pode ser alterado ao editar o gráfico</p>
-            <div id="chart" class="chart-area--chart"></div>
-            <button type="button" class="chart-area__button" id="dialog-button">Editar gráfico</button>
+            <p class="chart-area__text" id="chart-area__opening-text">Esse texto pode ser alterado ao editar o gráfico</p>
+            <div id="chart" class="chart-area__chart-box"></div>
+            <button type="button" class="chart-area__button" id="chart-area__dialog-button">Editar gráfico</button>
         </article>
-        <dialog close class="main-box__popup" id="dialog">
-            <form method="dialog" class="popup__form-box" id="popup__main-form">
-                <fieldset class="form-box__fieldset">
-                    <legend>Texto de apoio</legend>
-                    <div class="form-box__text-box">
-                        <textarea name="msg" rows="6" cols="50" maxlength="300" style="resize: none;" class="form-box__text-field" placeholder="Escreva seu texto aqui..."></textarea>
+
+        <dialog close class="main-box__dialog-box" id="main-box__dialog">
+            <form method="dialog" class="dialog-box__form" id="dialog-box__main-form">
+                
+                <fieldset class="dialog-box__form-fieldset">
+                    <legend class="form-fieldset__legend">Texto de apoio</legend>
+                    <div class="dialog-box__form-text-box">
+                        <textarea name="msg" rows="6" cols="50" maxlength="300" style="resize: none;" class="dialog-box__form-text-field" placeholder="Escreva seu texto aqui..."></textarea>
                     </div>
                 </fieldset>
                 
-                <fieldset class="form-box__fieldset">
-                    <legend class="form-box__legend">Configurar gráfico</legend>
+                <fieldset class="dialog-box__form-fieldset">
+                    <legend class="form-fieldset__legend">Configurar gráfico</legend>
+
                     <!-- GRAPH TITLE FIELD -->
-                    <div class="form-box--title">
+                    <div class="dialog-box__form-title-box">
                         <label for="chart-title">Titulo do Gráfico: </label>
-                        <input type="text" name="chart_title" id="chart-title" class="popup-field--title-input">
+                        <input type="text" name="chart_title" id="chart-title" class="dialog-box__form-title-input">
                     </div>
-                    <div class="form-box--title">
+                    <div class="dialog-box__form-title-box">
                         <label for="xtitle">Titulo eixo X:</label>
-                        <input type="text" name="Xtitle" id="xtitle" class="popup-field--title-input">
+                        <input type="text" name="Xtitle" id="xtitle" class="dialog-box__form-title-input">
                     </div>
-                    <!-- GRAPH BAR ONE FIELD-->
-                    <div class="form-box__bar">
-                        <div class="bar__popup-field">
+
+                    <!-- GRAPH BAR FIELD-->
+                    <div class="dialog-box__graph-bar-box">
+                        <div class="dialog-box__graph-field-box">
                             <label for="name-bar1">Nome 1</label>
-                            <input type="text" name="bar-name1" id="name-bar1" class="popup-field--input-bar popup-field--input">
+                            <input type="text" name="bar-name1" id="name-bar1" class="dialog-box__input-bar-name graph-field-box__input">
                         </div>
-                        <div class="bar__popup-field">
-                            <label for="bar1">Valor 1</label>
-                            <input type="number" name="value-bar1" id="bar1" class="popup-field--input-valuebar popup-field--input">
+                        <div class="dialog-box__graph-field-box">
+                            <label for="value-bar1">Valor 1</label>
+                            <input type="number" name="bar-value1" id="value-bar1" class="dialog-box__input-bar-value graph-field-box__input">
                         </div>
                     </div>
+
                     <!-- GRAPH BUTTONS -->
-                    <div class="form-box__buttons" id="form-bar-buttons">
-                        <button id="confirm" type="submit" class="buttons--confirm">Pronto!</button>
+                    <div class="dialog-box__form-btnbox" id="dialog-box__main-form-btnbox">
+                        <button id="main-form__btn-confirm" type="submit" class="form-btnbox__btn--confirm">Pronto!</button>
                         <div>
-                            <button id="add" type="button" class="buttons--add">+</button>
-                            <button id="del" type="button" class="buttons--del">-</button>
+                            <button id="main-form__btn-add" type="button" class="form-btnbox__btn--add">+</button>
+                            <button id="main-form__btn-del" type="button" class="form-btnbox__btn--del">-</button>
                         </div>
-                        <button id="cancel" class="buttons--cancel" type="reset">Cancelar</button>
+                        <button id="main-form__btn-cancel" class="form-btnbox__btn--cancel" type="reset">Cancelar</button>
                     </div>
                 </fieldset>
+
             </form>
         </dialog>
     </main>
     <footer class="footer-box">
-        <p class="footer-box__main-text">&copy; Desenvolvido por <a href="https://github.com/brenofaustino" class="footer-box--anchor">Breno Faustino Alves &#x1F517;</a></p>
+        <p class="footer-box__main-text">&copy; Desenvolvido por <a href="https://github.com/brenofaustino" class="footer-box__main-text-a">Breno Faustino Alves &#x1F517;</a></p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
