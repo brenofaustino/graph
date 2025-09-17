@@ -30,48 +30,33 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
-
-.header-box__logo{
-    font-size: 1.6rem;
-    position: relative;
-}
-
-.header-box__logo::after{
-    position: absolute;
-    content: "";
-    background-color: white;
-    width: 6px;
-    height: 6px;
-    right: -6px;
-    bottom: 3px;
-}
-
-.links__anchor--logo{
-    color: white;
-    text-decoration: none;
     align-items: center;
+    height: 2rem;
 }
 
-.header-box__links{
+.header-box__logo-div{
+    height: 100%;
+}
+
+.header-box__logo-anchor{
+    display: block;
+    height: 100%;
+    align-content: center;
+}
+
+.header-box__logo-anchor img{
+    display: block;
+    height: 80%;
+}
+
+.header-box__links-div{ 
     display: flex;
     gap: 2rem;
 }
 
-.links__anchor{
-    display: inline-block;
-    align-content: center;
-    height: 100%;
+.header-box__links-a{
     color: white;
     text-decoration: none;
-}
-
-.links__anchor::after{
-    content: "";
-    display: block;
-    width: 1rem;
-    border-bottom: 1px solid white;
-    margin-left: auto;
 }
 
 /* finish header */
@@ -93,12 +78,12 @@ body{
     gap: 1rem;
 }
 
-.chart-area--text{
+.chart-area__text{
     margin: 0;
     text-align: center;
 }
 
-.chart-area--chart{
+.chart-area__chart-box{
     color: black;
 }
 
@@ -114,37 +99,41 @@ body{
 
 /* finish main */
 
-/*start popup*/
+/*start popup dialog*/
 
-.main-box__popup{
+.main-box__dialog-box{
     background-color: #1a1a1a;
     border: 1px solid #2a5383;
     color: #dddddd;
 }
 
-.main-box__popup::backdrop{
+.main-box__dialog-box::backdrop{
     background-color: rgba(15, 15, 15, 0.89);
 }
 
-.popup__form-box{
+.dialog-box__form{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.form-box__fieldset{
-    border: 1px solid #dddddd1a;
+.dialog-box__form-fieldset{
+    border: 1px solid #a1a1a1d3;
     border-radius: 10px;
 }
 
-.form-box__text-box{
+.form-fieldset__legend{
+    font-weight: bold;
+}
+
+.dialog-box__form-text-box{
     overflow: hidden;
     display: flex;
     padding: 1px;
     border-radius: 10px;
 }
 
-.form-box__text-field{
+.dialog-box__form-text-field{
     width: 100%;
     border-radius: 10px;
     background-color: #e2e2e2;
@@ -153,40 +142,39 @@ body{
     padding: 5px;
 }
 
-.form-box__bar{
+/*graph title*/
+.dialog-box__form-title-input{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #dddddd;
+    border: none;
+}
+
+/*graph bar*/
+.dialog-box__graph-bar-box{
     display: flex;
     justify-content: space-between;
 }
 
-.form-box--title{
-    width: 100%;
-}
-
-.bar__popup-field{
+.dialog-box__graph-field-box{
     width: 48%;
 }
 
-.popup-field--input{
+.graph-field-box__input{
     width: 100%;
     box-sizing: border-box;
     background-color: #dddddd;
     border: none;
 }
 
-.popup-field--title-input{
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #dddddd;
-    border: none;
-}
-
-.form-box__buttons{
+/*graph buttons*/
+.dialog-box__form-btnbox{
     display: flex;
     justify-content: space-around;
     margin-top: 0.7rem;
 }
 
-.buttons--confirm{
+.form-btnbox__btn--confirm{
     background-color: #28d422;
     font-family: 'Inter';
     padding: 0.4rem;
@@ -194,7 +182,7 @@ body{
     text-transform: uppercase;
 }
 
-.buttons--add{
+.form-btnbox__btn--add{
     background-color: #28d422;
     font-family: 'Inter';
     padding: 0.4rem;
@@ -203,7 +191,7 @@ body{
     width: 30px;
 }
 
-.buttons--del{
+.form-btnbox__btn--del{
     background-color: #d42222;
     color: white;
     font-family: 'Inter';
@@ -213,7 +201,7 @@ body{
     width: 30px;
 }
 
-.buttons--cancel{
+.form-btnbox__btn--cancel{
     background-color: #d42222;
     color: white;
     font-family: 'Inter';
@@ -222,7 +210,7 @@ body{
     text-transform: uppercase;
 }
 
-/*finish popup*/
+/*finish popup dialog*/
 
 /* start footer */
 
@@ -239,7 +227,7 @@ body{
     text-shadow: 0 0 1px #1a1a1a;
 }
 
-.footer-box--anchor{
+.footer-box__main-text-a{
     color: white;
     font-weight: bold;
     text-decoration: none;

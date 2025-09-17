@@ -1,28 +1,28 @@
 export class GraphView{
     constructor(){
-        this.barDataName = Array.from(document.getElementsByClassName('popup-field--input-bar'))
-        this.barDataValue = Array.from(document.getElementsByClassName('popup-field--input-valuebar'))
-        this.titleData = Array.from(document.querySelectorAll('.popup-field--title-input'))
-        this.textData = document.querySelector('.form-box__text-field')
+        this.barDataName = Array.from(document.getElementsByClassName('dialog-box__input-bar-name'))
+        this.barDataValue = Array.from(document.getElementsByClassName('dialog-box__input-bar-value'))
+        this.titleData = Array.from(document.querySelectorAll('.dialog-box__form-title-input'))
+        this.textData = document.querySelector('.dialog-box__form-text-field')
 
         this.chartBox = document.querySelector('#chart')
-        this.form = document.getElementById('popup__main-form')
-        this.dialogbox = document.querySelector("#dialog")
-        this.dialog = document.querySelector("#dialog-button")
-        this.addButton = document.getElementById("add")
-        this.delButton = document.getElementById("del")
+        this.form = document.getElementById('dialog-box__main-form')
+        this.dialogbox = document.querySelector("#main-box__dialog")
+        this.dialog = document.querySelector("#chart-area__dialog-button")
+        this.addButton = document.getElementById("main-form__btn-add")
+        this.delButton = document.getElementById("main-form__btn-del")
     }
 
     setNewDataDOM(){
-        this.barDataName = Array.from(document.getElementsByClassName('popup-field--input-bar'))
-        this.barDataValue = Array.from(document.getElementsByClassName('popup-field--input-valuebar'))
-        this.titleData = Array.from(document.querySelectorAll('.popup-field--title-input'))
-        this.textData = document.querySelector('.form-box__text-field')
+        this.barDataName = Array.from(document.getElementsByClassName('dialog-box__input-bar-name'))
+        this.barDataValue = Array.from(document.getElementsByClassName('dialog-box__input-bar-value'))
+        this.titleData = Array.from(document.querySelectorAll('.dialog-box__form-title-input'))
+        this.textData = document.querySelector('.dialog-box__form-text-field')
     }
 
     addBarField(){
-        const containerButtons = document.querySelector("#form-bar-buttons")
-        let barFields = Array.from(document.querySelectorAll(".form-box__bar"))
+        const containerButtons = document.querySelector("#dialog-box__main-form-btnbox")
+        let barFields = Array.from(document.querySelectorAll(".dialog-box__graph-bar-box"))
         
         if(barFields.length == 12){
             return console.log("maximo de 12")
@@ -43,11 +43,11 @@ export class GraphView{
         
         //settings to value fields
         let fieldValue = lastBarBox.lastElementChild.firstElementChild
-        fieldValue.setAttribute("for", `bar${barFields.length + 1}`)
+        fieldValue.setAttribute("for", `value-bar${barFields.length + 1}`)
         fieldValue.textContent = `Valor ${barFields.length + 1}`
         fieldValue = lastBarBox.lastElementChild.lastElementChild
-        fieldValue.setAttribute("name", `value-bar${barFields.length + 1}`)
-        fieldValue.setAttribute("id", `bar${barFields.length + 1}`)
+        fieldValue.setAttribute("name", `bar-value${barFields.length + 1}`)
+        fieldValue.setAttribute("id", `value-bar${barFields.length + 1}`)
         fieldValue.value = ""
 
         let formContainer = containerButtons.parentNode
@@ -55,8 +55,8 @@ export class GraphView{
     }
 
     excludeBarField(){
-        const containerButtons = document.querySelector("#form-bar-buttons")
-        let barFields = Array.from(document.querySelectorAll(".form-box__bar"))
+        const containerButtons = document.querySelector("#dialog-box__main-form-btnbox")
+        let barFields = Array.from(document.querySelectorAll(".dialog-box__graph-bar-box"))
 
         if(barFields.length == 1){
             return console.log("Valor minimo atingido")
@@ -67,8 +67,8 @@ export class GraphView{
     }
 
     clearFullInput(){
-        const containerButtons = document.querySelector("#form-bar-buttons")
-        let barFields = Array.from(document.querySelectorAll(".form-box__bar"))
+        const containerButtons = document.querySelector("#dialog-box__main-form-btnbox")
+        let barFields = Array.from(document.querySelectorAll(".dialog-box__graph-bar-box"))
 
         for(let i = barFields.length - 1; i > 0; i--){
             let lastBarBox = containerButtons.previousElementSibling
@@ -77,7 +77,7 @@ export class GraphView{
     }
 
     addText(){
-        let text = document.querySelector(".form-box__text-field")
+        let text = document.querySelector(".dialog-box__form-text-field")
         let paragraph = document.querySelector("#chart-area__opening-text")
         ;(text.value == "") ? paragraph.innerHTML = "Esse texto pode ser alterado ao editar o gráfico." : paragraph.innerHTML = text.value;
     }
