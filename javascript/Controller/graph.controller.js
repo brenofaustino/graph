@@ -65,5 +65,7 @@ export class GraphController{
         this.view.delButton.addEventListener("click", () => {
             this.view.excludeBarField()
         })
+
+        
     }
 }

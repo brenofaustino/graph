@@ -107,7 +107,7 @@ export class GraphModel{
             },
             plotOptions: {
                 bar: {
-                    horizontal: true,
+                    horizontal: (innerWidth < 1200),
                     distributed: false
                 }
             },

@@ -1,0 +1,36 @@
+.main-box__about-container{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    color: #eeeeee;
+}
+
+.about-container__table{
+    margin: auto;
+}
+
+.about-container__table-header{
+    font-size: 1.2rem;
+}
+
+.table-row__data, .about-container__table-header {
+    padding: 0.8rem;
+}
+
+.table-row__data{
+    background-color: #1a1a1a;
+}
+
+.table-row__data:nth-child(1){
+    border-left: 1px solid rgb(255, 230, 0);
+}
+.table-row__data:nth-child(2){
+    border-left: 1px solid rgb(255, 145, 0);
+}
+.table-row__data:nth-child(3){
+    border-left: 1px solid rgb(12, 87, 185);
+}
+
+.main-box__main-text{
+    line-height: 1.5em;
+}
