@@ -37,7 +37,20 @@ export class GraphController{
                 this.view.barDataName[j].value = savedData.bar[j].x
                 this.view.barDataValue[j].value = savedData.bar[j].y
             }
+            
+            // savedData.bar.forEach((element, index) => {
+
+            //     if (index < savedData.bar.length - 1){
+            //         this.view.addBarField()
+            //         this.view.setNewDataDOM()
+            //     }
+
+            //     this.view.barDataName[index].value = element.x
+            //     this.view.barDataValue[index].value = element.y
+            // });
         }
+
+        this.view.textData.innerHTML = savedData.text
     }
 
     init(){

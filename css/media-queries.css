@@ -1,9 +1,11 @@
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
+    /* start header */
     .header-box__nav{
         max-width: 80%;
     }
+    /* finish header */
 
-
+    /* start main content */
     .main-box__chart-area{
         width: 80%;
         margin: auto;
@@ -12,6 +14,93 @@
     .main-box__about-container{
         width: 80%;
     }
+
+    .chart-area__button:hover{
+        background-color: #005bc4;
+        cursor: pointer;
+    }
+    /* finish main content */
+
+    /* start popup dialog */
+    .main-box__dialog-box{
+        background-color: var(--second-bg-color);
+        border: 1px solid #2a5383;
+        color: var(--input-bg-color);
+        margin: auto;
+    }
+
+    #dialog-box__main-form{
+        height: 806px;
+        width: 490px;
+    }
+
+    .dialog-box__form-fieldset--bar-section{
+        min-height: 638px;
+        height: 638px;
+        position: relative;
+    }
+
+    /* graph buttons */
+
+    #dialog-box__main-form-btnbox{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0.4rem;
+        margin-top: 0.4rem;
+    }
+
+    .dialog-box__form-btnbox{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 0.7rem;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 10px;
+    }
+
+    #main-form__btn-cancel ,#main-form__btn-del, #main-form__btn-confirm, #main-form__btn-add{
+        position: static;
+        border-radius: 10px;
+        width: 20%;
+    }
+
+    #main-form__btn-confirm:hover{
+        background-color: #007c00;
+    }
+
+    #main-form__btn-add:hover{
+        background-color: #3232bb;
+    }
+    
+    #main-form__btn-cancel:hover{
+        background-color: #c90101;
+    }
+    
+    #main-form__btn-del:hover{
+        background-color: #373799;
+    }
+
+    #main-form__btn-cancel svg,#main-form__btn-del svg, #main-form__btn-confirm svg, #main-form__btn-add svg{
+        display: none;
+    }
+
+    .main-form__btn{
+        font-family: 'Inter';
+        padding: 0.4rem;
+        border-radius: 5px;
+        text-transform: uppercase;
+    }
+
+    .main-form__btn:hover{
+        cursor: pointer;
+    }
+
+    .main-form__btn-text{
+        display: inline;
+    }
+    /* finish popup dialog */
 }
 
 @media screen and (min-width: 992px) {
