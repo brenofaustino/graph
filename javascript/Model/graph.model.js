@@ -34,6 +34,7 @@ export class GraphModel{
 
         this.text.push(graphText.value)
 
+        // console.log(barTitle)
         this.saveData(this)
     }
 
@@ -96,7 +97,7 @@ export class GraphModel{
                 align: 'center',
                 margin: 10,
                 offsetX: 0,
-                offsetY: 15,
+                offsetY: 20,
                 floating: false,
                 style: {
                     fontSize:  '1rem',
@@ -107,7 +108,7 @@ export class GraphModel{
             },
             plotOptions: {
                 bar: {
-                    horizontal: (innerWidth < 1200),
+                    horizontal: false,
                     distributed: false
                 }
             },
@@ -120,7 +121,7 @@ export class GraphModel{
                 title: {
                     text: this.title[1],
                     offsetX: 0,
-                    offsetY: 10,
+                    offsetY: -10,
                     style: {
                         color: '#fff',
                         fontSize: '12px',
@@ -143,9 +144,84 @@ export class GraphModel{
                         fontSize: '12px',
                         fontFamily: 'Inter, Arial, Helvetica, sans-serif',
                         fontWeight: 400,
-                        cssClass: 'apexcharts-xaxis-label',
+                        cssClass: 'apexcharts-xaxis-label'
                     }
                 }
+            },
+            yaxis: {
+                show: true,
+                showAlways: false,
+                showForNullSeries: true,
+                seriesName: undefined,
+                opposite: false,
+                reversed: false,
+                logarithmic: false,
+                logBase: 10,
+                tickAmount: undefined,
+                min: undefined,
+                max: undefined,
+                stepSize: undefined,
+                forceNiceScale: true,
+                floating: false,
+                decimalsInFloat: undefined,
+                labels: {
+                    show: true,
+                    showDuplicates: false,
+                    align: 'left',
+                    minWidth: 0,
+                    maxWidth: 160,
+                    style: {
+                        colors: [],
+                        fontSize: '12px',
+                        fontFamily: 'Helvetica, Arial, sans-serif',
+                        fontWeight: 400,
+                        cssClass: 'apexcharts-yaxis-label',
+                    },
+                    offsetX: 0,
+                    offsetY: 0,
+                    rotate: 0,
+                    formatter: (value) => { return value },
+                },
+                axisBorder: {
+                    show: true,
+                    color: '#78909C',
+                    offsetX: 0,
+                    offsetY: 0
+                },
+                axisTicks: {
+                    show: true,
+                    borderType: 'solid',
+                    color: '#78909C',
+                    width: 6,
+                    offsetX: 0,
+                    offsetY: 0
+                },
+                title: {
+                    text: this.title[2],
+                    rotate: -90,
+                    offsetX: 5,
+                    offsetY: 0,
+                    style: {
+                        color: '#fff',
+                        fontSize: '12px',
+                        fontFamily: 'Inter, Arial, Helvetica, sans-serif',
+                        fontWeight: 400,
+                        cssClass: 'apexcharts-yaxis-title',
+                    },
+                },
+                crosshairs: {
+                    show: true,
+                    position: 'back',
+                    stroke: {
+                        color: '#b6b6b6',
+                        width: 1,
+                        dashArray: 0,
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    offsetX: 0,
+                }, 
             }
         }
         return options

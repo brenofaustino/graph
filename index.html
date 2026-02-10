@@ -23,7 +23,7 @@
     </header>
     <main class="main-box">
         <article class="main-box__chart-area">
-            <p class="chart-area__text" id="chart-area__opening-text">Esse texto pode ser alterado ao editar o gráfico</p>
+            <p class="chart-area__text" id="chart-area__opening-text"></p>
             <div id="chart" class="chart-area__chart-box"></div>
             <button type="button" class="chart-area__button" id="chart-area__dialog-button">Editar gráfico</button>
         </article>
@@ -38,39 +38,67 @@
                     </div>
                 </fieldset>
                 
-                <fieldset class="dialog-box__form-fieldset">
+                <fieldset class="dialog-box__form-fieldset dialog-box__form-fieldset--bar-section">
                     <legend class="form-fieldset__legend">Configurar gráfico</legend>
 
                     <!-- GRAPH TITLE FIELD -->
                     <div class="dialog-box__form-title-box">
                         <label for="chart-title">Titulo do Gráfico: </label>
-                        <input type="text" name="chart_title" id="chart-title" class="dialog-box__form-title-input">
+                        <input type="text" name="chart_title" id="chart-title" class="dialog-box__form-input dialog-box__form-title-js">
                     </div>
-                    <div class="dialog-box__form-title-box">
-                        <label for="xtitle">Titulo eixo X:</label>
-                        <input type="text" name="Xtitle" id="xtitle" class="dialog-box__form-title-input">
+                    <div class="dialog-box__form-axis-container">
+                        <div class="dialog-box__form-axis-box">
+                            <label for="xtitle">Titulo eixo X:</label>
+                            <input type="text" name="Xtitle" id="xtitle" class="dialog-box__form-input dialog-box__form-title-js">
+                        </div>
+                        <div class="dialog-box__form-axis-box">
+                            <label for="ytitle">Titulo eixo Y:</label>
+                            <input type="text" name="Ytitle" id="ytitle" class="dialog-box__form-input dialog-box__form-title-js">
+                        </div>
                     </div>
 
                     <!-- GRAPH BAR FIELD-->
                     <div class="dialog-box__graph-bar-box">
                         <div class="dialog-box__graph-field-box">
                             <label for="name-bar1">Nome 1</label>
-                            <input type="text" name="bar-name1" id="name-bar1" class="dialog-box__input-bar-name graph-field-box__input">
+                            <input type="text" name="bar-name1" id="name-bar1" class="dialog-box__input-bar-name dialog-box__form-input">
                         </div>
                         <div class="dialog-box__graph-field-box">
                             <label for="value-bar1">Valor 1</label>
-                            <input type="number" name="bar-value1" id="value-bar1" class="dialog-box__input-bar-value graph-field-box__input">
+                            <input type="number" name="bar-value1" id="value-bar1" class="dialog-box__input-bar-value dialog-box__form-input">
                         </div>
                     </div>
 
                     <!-- GRAPH BUTTONS -->
                     <div class="dialog-box__form-btnbox" id="dialog-box__main-form-btnbox">
-                        <button id="main-form__btn-confirm" type="submit" class="form-btnbox__btn--confirm">Pronto!</button>
-                        <div>
-                            <button id="main-form__btn-add" type="button" class="form-btnbox__btn--add">Add Bar</button>
-                            <button id="main-form__btn-del" type="button" class="form-btnbox__btn--del">Del Bar</button>
-                        </div>
-                        <button id="main-form__btn-cancel" class="form-btnbox__btn--cancel" type="reset">Cancelar</button>
+                        <button id="main-form__btn-confirm" type="submit" class="main-form__btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                                <path d="M7 12.5L10.5 16L17.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="main-form__btn-text">OK</span>
+                        </button>
+                        
+                        <button id="main-form__btn-add" type="button" class="main-form__btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                                <path d="M12 6V18M6 12H18" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                            </svg>
+                            <span class="main-form__btn-text">Incluir Barra</span>
+                        </button>
+
+                        
+                        <button id="main-form__btn-del" type="button" class="main-form__btn" aria-label="remover barra">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                                <path d="M6 12H18" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                            </svg>
+                            <span class="main-form__btn-text">Remover barra</span>
+                        </button>
+                        
+                        <button id="main-form__btn-cancel" class="main-form__btn" type="reset" aria-label="cancelar">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                            </svg>
+                            <span class="main-form__btn-text">Cancelar</span>
+                        </button> 
                     </div>
                 </fieldset>
 

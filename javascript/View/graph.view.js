@@ -2,7 +2,7 @@ export class GraphView{
     constructor(){
         this.barDataName = Array.from(document.getElementsByClassName('dialog-box__input-bar-name'))
         this.barDataValue = Array.from(document.getElementsByClassName('dialog-box__input-bar-value'))
-        this.titleData = Array.from(document.querySelectorAll('.dialog-box__form-title-input'))
+        this.titleData = Array.from(document.getElementsByClassName('dialog-box__form-title-js'))
         this.textData = document.querySelector('.dialog-box__form-text-field')
 
         this.chartBox = document.querySelector('#chart')
@@ -16,7 +16,7 @@ export class GraphView{
     setNewDataDOM(){
         this.barDataName = Array.from(document.getElementsByClassName('dialog-box__input-bar-name'))
         this.barDataValue = Array.from(document.getElementsByClassName('dialog-box__input-bar-value'))
-        this.titleData = Array.from(document.querySelectorAll('.dialog-box__form-title-input'))
+        this.titleData = Array.from(document.getElementsByClassName('dialog-box__form-title-js'))
         this.textData = document.querySelector('.dialog-box__form-text-field')
     }
 
@@ -78,7 +78,7 @@ export class GraphView{
 
     addText(){
         let text = document.querySelector(".dialog-box__form-text-field")
-        let paragraph = document.querySelector("#chart-area__opening-text")
-        ;(text.value == "") ? paragraph.innerHTML = "Esse texto pode ser alterado ao editar o gráfico." : paragraph.innerHTML = text.value;
+        let paragraph = document.querySelector("#chart-area__opening-text");
+        (text.value == "") ? paragraph.innerHTML = "Monte seu gráfico, pode conter até 12 (doze) barras.<br>(Altere esse texto no campo TEXTO DE APOIO clicando em editar gráfico)" : paragraph.innerHTML = text.value;
     }
 }
