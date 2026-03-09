@@ -48,9 +48,8 @@ export class GraphController{
             //     this.view.barDataName[index].value = element.x
             //     this.view.barDataValue[index].value = element.y
             // });
+            this.view.textData.innerHTML = savedData.text
         }
-
-        this.view.textData.innerHTML = savedData.text
     }
 
     init(){
